@@ -168,6 +168,9 @@ public class addtocart_cancel extends baseclass {
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//button[@class='btn btn-red']")).click();
 			Thread.sleep(2000);
+	
+			//vikas
+			
 			driver.findElement(By.xpath("//div[@class=\"ng-confirm-buttons\"]")).click();
   }
 }
