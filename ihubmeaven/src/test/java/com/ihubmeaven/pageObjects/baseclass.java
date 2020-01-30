@@ -30,9 +30,11 @@ import org.testng.annotations.BeforeSuite;
 
 
 public class baseclass {
+	
  public static WebDriver driver;
  public static ExtentTest test;
  public static ExtentReports report;
+
 
 @BeforeSuite
   public void suite() {  
@@ -45,7 +47,7 @@ public class baseclass {
 public void setup() {
 	driver= new ChromeDriver();
 	  System.setProperty("WebDriver.chrome.driver", System.getProperty("user+dir")+"//Drivers/chromedriver_linux64.exe");
-	  
+	 // test=report.createTest("add to cart ");	
 }
 
 @AfterMethod
@@ -57,6 +59,7 @@ public void endtest(ITestResult result) throws IOException {
 		test.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 	}
 	driver.quit();
+	report.flush();
 	}
 
 @AfterSuite
