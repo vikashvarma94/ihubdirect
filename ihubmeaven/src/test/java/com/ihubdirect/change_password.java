@@ -24,23 +24,18 @@ public class change_password extends baseclass  {
 private static final OutputType<File> OuputType_FILE = null;
 
 @Test
-  public void tc_1() throws IOException {
+  public void tc_1() throws IOException, InterruptedException {
 	test = report.createTest("tc_1");
 	driver.get("http://183.82.123.14/iHubMultiStoresDirectDev");
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	pageobjectfactory page = new pageobjectfactory(driver);
 	page.location("hyderabad");
 	page.signin();
-	page.login("9666262992","Store.123");
+	Thread.sleep(5000);
+	page.login();
+
+	}}
 	
-	JavascriptExecutor j = (JavascriptExecutor)driver;
-	j.executeScript("Window.open()");
-	for(String handle:driver.getWindowHandles()) {
-		driver.switchTo().window(handle);
-	}
-		
-	}
-	}
 
 
 

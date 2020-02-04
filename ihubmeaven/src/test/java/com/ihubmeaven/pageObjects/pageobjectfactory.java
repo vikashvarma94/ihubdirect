@@ -2,6 +2,8 @@ package com.ihubmeaven.pageObjects;
 
 
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 
 
 
-public class pageobjectfactory {
+public class pageobjectfactory extends dataprovider{
 	private static final String Keys_ENTER = null;
 	public static WebDriver driver;
 	private By signin = By.xpath("(//a[@class='sbold'])[1]");
@@ -24,9 +26,11 @@ public class pageobjectfactory {
 		this.driver = driver;
 	}
 
-	public void login(String mobnum, String pass) {
-		
-		driver.findElement(uid).sendKeys(mobnum);
+	public void login() throws IOException {
+		dataprovider o = new dataprovider();
+		//o.dp();
+		//System.out.println(user);
+		driver.findElement(uid).sendKeys(user);
 		driver.findElement(passid).sendKeys(pass);
 		driver.findElement(submit).click();
 	}

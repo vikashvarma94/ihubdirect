@@ -1,6 +1,7 @@
 package com.ihubmeaven.pageObjects;
 
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -8,10 +9,13 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -34,7 +38,20 @@ public class baseclass {
  public static WebDriver driver;
  public static ExtentTest test;
  public static ExtentReports report;
-
+ 
+ @DataProvider(name = "test")
+ public Object[][] dp() throws IOException {
+	  FileInputStream fis = new FileInputStream("/home/vikas/Desktop/write.xlsx");
+	    XSSFWorkbook wb = new XSSFWorkbook(fis);
+	    XSSFSheet sh = wb.getSheetAt(0);
+	    System.out.println(sh.getLastRowNum());
+	    for(int i=2;i<=sh.getLastRowNum();i++) {
+   return new String[][] {	
+     new String[] { sh.getRow(i).getCell(1).getStringCellValue(),sh.getRow(i).getCell(2).getStringCellValue()}};
+	    }
+		return dp(); 
+		
+ }
 
 @BeforeSuite
   public void suite() {  
