@@ -28,8 +28,8 @@ public class pageobjectfactory extends dataprovider{
 
 	public void login() throws IOException {
 		dataprovider o = new dataprovider();
-		//o.dp();
-		//System.out.println(user);
+		String user = o.dp();
+		String pass = o.dp();
 		driver.findElement(uid).sendKeys(user);
 		driver.findElement(passid).sendKeys(pass);
 		driver.findElement(submit).click();

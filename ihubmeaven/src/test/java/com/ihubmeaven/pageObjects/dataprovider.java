@@ -25,7 +25,7 @@ public  String dp() throws IOException {
 	    	user = sh.getRow(i).getCell(1).getStringCellValue();
 	    	pass = sh.getRow(i).getCell(2).getStringCellValue(); 
 	    }
-		return dp();
-
+		return user;
+		
  }}
   
