@@ -1,10 +1,15 @@
 package com.ihubdirectadmin;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class viewallorders {
+import com.ihubmeaven.pageObjects.baseclass;
+
+public class viewallorders extends baseclass{
   @Test
-  public void f() {
+  public void f() throws InterruptedException {
 	  driver.get("http://164.52.194.143/iHubBetaAdmin");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -19,9 +24,6 @@ public class viewallorders {
 		driver.findElement(By.xpath("//li[@ng-repeat=\"i in  DynamicMenuItems\"][9]")).click();
 		Thread.sleep(2000);
 		// Special Request
-		driver.findElement(
-				By.xpath("//li[@ng-repeat=\"i in  DynamicMenuItems\"][9]//li[@ng-repeat=\"j in i.SubMenus\"][1]"))
-				.click();
-
+		driver.findElement(By.xpath("//li[@ng-repeat=\"i in  DynamicMenuItems\"][9]//li[@ng-repeat=\"j in i.SubMenus\"][1]")).click();
   }
 }

@@ -3,15 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ihubdirect.change_password">
+      <class name="com.ihubmeaven.offers.testxl">
         <methods>
-          <include name="setup"/>
-          <include name="suite"/>
-          <include name="afterSuite"/>
-          <include name="endtest"/>
-          <include name="tc_1"/>
+          <include name="f"/>
         </methods>
-      </class> <!-- com.ihubdirect.change_password -->
+      </class> <!-- com.ihubmeaven.offers.testxl -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

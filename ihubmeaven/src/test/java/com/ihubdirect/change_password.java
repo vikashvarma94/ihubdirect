@@ -1,7 +1,6 @@
 package com.ihubdirect;
 
 
-import java.awt.Window;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -21,7 +20,6 @@ import com.ihubmeaven.pageObjects.pageobjectfactory;
 
 public class change_password extends baseclass  {
 
-private static final OutputType<File> OuputType_FILE = null;
 
 @Test
   public void tc_1() throws IOException, InterruptedException {
@@ -34,7 +32,7 @@ private static final OutputType<File> OuputType_FILE = null;
 	Thread.sleep(5000);
 	page.login();
 	
-
+	
 	}}
 	
 

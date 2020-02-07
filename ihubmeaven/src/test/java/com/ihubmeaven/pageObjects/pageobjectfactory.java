@@ -38,9 +38,9 @@ public class pageobjectfactory extends dataprovider{
 	public void location(String location) {
 		driver.findElement(By.xpath("(//input[@type='text'])[1]")).sendKeys(location);
 		driver.findElement(By.xpath("(//input[@type='text'])[1]")).sendKeys(Keys.ENTER);
-}
+	}
 	public void signin() {
 		driver.findElement(signin).click();
 	}
 	
-}
+	}
