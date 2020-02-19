@@ -14,8 +14,9 @@ public class NewTest  {
   @Test()
   public void f() throws IOException {
 	  dataprovider data = new dataprovider();
-	  data.dp();
-	  System.out.println();
+	 String user = data.dp();
+	  
+	System.out.println(user);
   }
 }
 
